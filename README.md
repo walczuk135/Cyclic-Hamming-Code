@@ -34,4 +34,4 @@ Project is:  _finished_
 The program was created as an application to be credited to universities.
 
 ## Contact
-Created by [@walczuk135](walczuk135@gmail.com) - feel free to contact me!
+Created by [walczuk135@gmail.com](walczuk135@gmail.com) - feel free to contact me!
