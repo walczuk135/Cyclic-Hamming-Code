@@ -17,49 +17,6 @@ public class DecodingMessage {
         this.data=data;
     }
 
-    public String decoding(){
-        StringBuilder sb = new StringBuilder();
-        for(int[] s1 : matrixFunction){
-            sb.append(Arrays.toString(s1)).append('\n');
-        }
-        String s = sb.toString();
-
-        int[] dataTable=DataToArray.convertToTable(data);
-        int[] newSyndrome = calculateNewSyndrome();
-        int[] oldSyndrome = calculateOldSyndrome();
-        int[] xorResult = xorResultSyndromeOldSyndrome();
-        String calculatingYr="Yr1 = "+matrixFunction[0][0]+"*"+dataTable[0]+" XOR " +matrixFunction[0][1]+"*"+dataTable[1]+" XOR " +matrixFunction[0][2]+"*"+dataTable[2]+" XOR " +matrixFunction[0][3]+"*"+dataTable[3]+"=" +newSyndrome[0]+"\n"
-                +"Yr2 = "+matrixFunction[1][0]+"*"+dataTable[0]+" XOR " +matrixFunction[1][1]+"*"+dataTable[1]+" XOR " +matrixFunction[1][2]+"*"+dataTable[2]+" XOR " +matrixFunction[1][3]+"*"+dataTable[3]+"=" +newSyndrome[1]+"\n"
-                +"Yr3 = "+matrixFunction[2][0]+"*"+dataTable[0]+" XOR " +matrixFunction[2][1]+"*"+dataTable[1]+" XOR " +matrixFunction[2][2]+"*"+dataTable[2]+" XOR " +matrixFunction[2][3]+"*"+dataTable[3]+"=" +newSyndrome[2]+"\n";
-
-        String syndrome="Syndrome = "+Arrays.toString(oldSyndrome)+" XOR "+Arrays.toString(newSyndrome)+" = "+Arrays.toString(xorResult);
-
-        String result=s+"*\n"
-                +"       [ "+dataTable[0]+" ]\n"
-                +"       [ "+dataTable[1]+" ]\n"
-                +"       [ "+dataTable[2]+" ]\n"
-                +"       [ "+dataTable[3]+" ]\n"
-                +"       [Yr1]\n"
-                +"       [Yr2]\n"
-                +"       [Yr3]\n"
-                +"=\n[0]\n[0]\n[0]"
-                +"\n"+calculatingYr
-                +"\n"+syndrome;
-
-        if (validXor()){
-            result = result.concat("\nA message without errors!");
-        }else {
-            int i = calculateErrorBit();
-            int[] vectorError = fillVectorZeroErrorBit(i);
-            int[] message = resultCorrectMessage(i);
-            result = result.concat("\nAn error occurred on the "+i+ "th bit."
-            +"\nEn = "+Arrays.toString(vectorError))
-            +"\nCorrecting the result : \n"
-            +"Yn = "+Arrays.toString(vectorError)+" XOR "+ Arrays.toString(dataTable)+" = " + Arrays.toString(message)
-            +"\nCorrect message = "+Arrays.toString(message);
-        }
-        return result;
-    }
 
     public boolean validXor(){
         return Arrays.equals(xorResultSyndromeOldSyndrome(), new int[]{0, 0, 0});
