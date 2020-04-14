@@ -17,7 +17,7 @@ The program encodes and decodes messages with a case of Hamming codes (7.4) with
 
 The program supports error control, you can only encode a message that has no more and no less 3-bits. You can only decode a message that has no more than 7 bits.
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](https://github.com/walczuk135/Cyclic-Hamming-Code/blob/master/Example%20cyclic%20code.PNG)
 
 ## Technologies
 * Java - version 8++
