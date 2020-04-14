@@ -6,12 +6,12 @@ import pl.pawel.kul.service.utill.DataToArray;
 
 import java.util.stream.IntStream;
 
-public class CodingMessage {
+public class CodingService {
     private GeneratingFunction generatingFunction;
     private final String data;
     private final String remainder;
 
-    public CodingMessage(GeneratingFunction generatingFunction, String data) {
+    public CodingService(GeneratingFunction generatingFunction, String data) {
         this.generatingFunction = generatingFunction;
         this.data=data;
         this.remainder=ArrayToData.convert(remainder());

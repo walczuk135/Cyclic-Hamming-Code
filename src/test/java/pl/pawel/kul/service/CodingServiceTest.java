@@ -4,16 +4,15 @@ import org.junit.jupiter.api.Test;
 import pl.pawel.kul.model.FunctionOne;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
-class CodingMessageTest {
+class CodingServiceTest {
     @Test
     void shouldCodingMessageThatFunctionOneExample1() {
         //given
         String message="1001";
-        CodingMessage codingMessage=new CodingMessage(new FunctionOne(),message);
+        CodingService codingService =new CodingService(new FunctionOne(),message);
         //when
-        String codingResult = codingMessage.coding();
+        String codingResult = codingService.coding();
         //then
         assertThat(codingResult).isEqualTo("1001110");
     }
@@ -22,9 +21,9 @@ class CodingMessageTest {
     void shouldCodingMessageThatFunctionOneExample2() {
         //given
         String message="1110";
-        CodingMessage codingMessage=new CodingMessage(new FunctionOne(),message);
+        CodingService codingService =new CodingService(new FunctionOne(),message);
         //when
-        String codingResult = codingMessage.coding();
+        String codingResult = codingService.coding();
         //then
         assertThat(codingResult).isEqualTo("1110100");
     }

@@ -4,7 +4,6 @@ package pl.pawel.kul.view;
 import pl.pawel.kul.controller.ControllerCoding;
 import pl.pawel.kul.model.FunctionOne;
 import pl.pawel.kul.model.FunctionTwo;
-import pl.pawel.kul.service.CodingMessage;
 import pl.pawel.kul.view.component.MainButton;
 import pl.pawel.kul.view.component.MainPanel;
 import pl.pawel.kul.view.component.RadioButton;
@@ -17,7 +16,6 @@ import java.util.regex.Pattern;
 
 public class ControllerListenerCoding implements ActionListener {
 
-    private CodingMessage codingMessage;
     private ControllerCoding controllerCoding;
     private final JTextArea textArea;
     private final JEditorPane editorPane;

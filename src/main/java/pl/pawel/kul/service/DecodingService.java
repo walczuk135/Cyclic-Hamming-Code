@@ -5,13 +5,13 @@ import pl.pawel.kul.service.utill.DataToArray;
 
 import java.util.Arrays;
 
-public class DecodingMessage {
+public class DecodingService {
     private final GeneratingFunction generatingFunction;
     private final int[][] matrixFunction;
     private final String data;
 
     
-    public DecodingMessage(GeneratingFunction generatingFunction, String data ) {
+    public DecodingService(GeneratingFunction generatingFunction, String data ) {
         this.generatingFunction = generatingFunction;
         this.matrixFunction = generatingFunction.getMatrixFunction();
         this.data=data;
